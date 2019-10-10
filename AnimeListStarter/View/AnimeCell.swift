@@ -9,6 +9,15 @@
 import UIKit
 
 class AnimeCell: UITableViewCell {
+    
+    
+    
+    @IBOutlet weak var animeImageView: UIImageView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

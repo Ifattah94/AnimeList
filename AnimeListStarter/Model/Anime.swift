@@ -41,5 +41,22 @@ struct Anime: Codable {
         case episodes
         case score
     }
+    
+    
+    
+    
+    func existsInFavorites() -> Bool? {
+        do {
+            let allSavedAnime = try AnimePersistenceManager.manager.getAnime()
+            if allSavedAnime.contains(where: {$0.id == self.id}) {
+                return true
+            } else {
+                return false
+            }
+        } catch {
+            print(error)
+            return nil
+        }
+    }
 
 }
